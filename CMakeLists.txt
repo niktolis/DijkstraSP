@@ -30,6 +30,6 @@ add_executable(HomeWork2 ${SOURCES})
 
 #set_target_properties(HomeWork2 
 #	PROPERTIES
- #   CXX_STANDARD 11
+ #   CXX_STANDARD 1
  #   CXX_STANDARD_REQUIRED ON
  #   CXX_EXTENSIONS OFF)
