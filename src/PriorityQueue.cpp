@@ -10,9 +10,7 @@
 
 PriorityQueue::PriorityQueue(int capacity) : capacity(capacity)
 {
-    //pos.resize(this->capacity);
     size = 0;
-	//PQVec.resize(this->capacity);
 }
 
 PriorityQueue::~PriorityQueue()
@@ -61,15 +59,15 @@ void PriorityQueue::reorder(int index)
 
 void PriorityQueue::insert(const int& node, const double& value)
 {
-	if (size == PQVec.size())
-	{
-		this->PQVec.push_back(new PQNode(node, value));
-		this->pos.push_back(node);
-		
-	}
-	size++;
+    if (size == PQVec.size())
+    {
+        this->PQVec.push_back(new PQNode(node, value));
+        this->pos.push_back(node);
+        
+    }
+    size++;
 
-	reorder(size);
+    reorder(size);
 }
 
 bool PriorityQueue::isEmpty()
@@ -87,7 +85,7 @@ PQNode* PriorityQueue::minPriority()
     {
         PQNode* root = PQVec.at(0);
 
-		// Change positions o
+        // Change positions o
         PQNode* lastNode = this->PQVec.at(this->size - 1);
         this->PQVec.at(0) = lastNode;
 
@@ -104,10 +102,10 @@ PQNode* PriorityQueue::minPriority()
 
 void PriorityQueue::chgPriority(const int& node,const double& value)
 {
-	
-		int i = this->pos[node];
-		this->PQVec.at(i)->weight = value;
-	
+    
+        int i = this->pos[node];
+        this->PQVec.at(i)->weight = value;
+    
 
     while (i && (this->PQVec.at(i)->weight
                          < this->PQVec.at((i-1)/2)->weight))
